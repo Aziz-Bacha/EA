@@ -133,10 +133,9 @@ def run_mu_plus_one_ea(mu, problem_size,fitness_function):
     return evaluations
 def task2_part_2():
     mu_values = [1, 2, 5, 10, 50]
-    problem_sizes = [10, 20, 30, 40, 50,100]
+    problem_sizes = [10, 20, 30, 40, 50]
     num_trials = 100
 
-    # Running the experiments and collecting results
     results = {mu: [] for mu in mu_values}
     for mu in mu_values:
         for size in problem_sizes:
@@ -321,3 +320,5 @@ def plot():
             plt.legend()
             plt.grid(True)
             plt.show()
+
+print('new')
