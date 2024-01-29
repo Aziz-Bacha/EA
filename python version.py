@@ -57,7 +57,6 @@ def run_one_plus_one_ea(fitness_function, n_bits):
 
     return evaluations,fitness
 
-print(run_one_plus_one_ea(one_max,100))
 
 def task2_part1():
 
@@ -124,15 +123,17 @@ def run_mu_plus_one_ea(mu, problem_size,fitness_function):
         # Replace the worst individual if offspring is better
         if offspring_fitness >= worst_fitness:
             
-            worst_index = fitnesses.index(min(fitnesses))
+            worst_index = fitnesses.index(worst_fitness)
             population[worst_index] = offspring
             fitnesses[worst_index] = offspring_fitness
             best_fitness = max(best_fitness,offspring_fitness)
+            worst_fitness = min(fitnesses)
+            
 
     return evaluations
 def task2_part_2():
     mu_values = [1, 2, 5, 10, 50]
-    problem_sizes = [10, 20, 30, 40, 50]
+    problem_sizes = [10, 20, 30, 40, 50,100]
     num_trials = 100
 
     # Running the experiments and collecting results
@@ -320,5 +321,3 @@ def plot():
             plt.legend()
             plt.grid(True)
             plt.show()
-for i in range(0,5,-1):
-   print(i)
